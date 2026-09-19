@@ -1,0 +1,12 @@
+db_data/
+minio_data/
+.env
+
+# Credenciales locales: usa config.env.example como plantilla
+config.env
+
+# Salidas de las corridas
+nota.txt
+classification_report.txt
+mlruns/
+__pycache__/
