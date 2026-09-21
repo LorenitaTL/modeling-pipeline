@@ -1,8 +1,4 @@
 import os
-
-# Las URLs prefirmadas que genera el server apuntan a http://s3:9000, un nombre
-# que solo resuelve dentro de la red de Docker. Sin esto, cualquier descarga de
-# artefactos desde el host (por ejemplo load_model) se queda reintentando.
 os.environ.setdefault("MLFLOW_ENABLE_PROXY_MULTIPART_DOWNLOAD", "false")
 
 import mlflow
@@ -14,7 +10,7 @@ from sklearn.metrics import accuracy_score, classification_report, f1_score
 from sklearn.model_selection import train_test_split
 
 mlflow.set_tracking_uri("http://localhost:5001")
-mlflow.set_experiment("smoke-test")
+mlflow.set_experiment("hello-mlflow")
 
 # Iris viene incluido en scikit-learn, no hace falta descargar nada
 X, y = load_iris(return_X_y=True, as_frame=True)
